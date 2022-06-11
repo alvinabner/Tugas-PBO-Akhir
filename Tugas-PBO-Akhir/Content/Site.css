@@ -1,6 +1,12 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+* {
+    font-family: Gontserrat;
+}
+
 body {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-bottom: 20px;
 }
 
@@ -16,6 +22,81 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+body {
+    background-color: rgb(41, 41, 41);
+}
+
+main {
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.input_section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.input_section > h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.input_section > form > .input {
+    margin: 8px auto;
+}
+
+.input_section > form > button {
+    background-color: rgb(97, 97, 97);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.input_section > form > button#bookSubmit:hover {
+    background-color: rgb(151, 151, 151);
+}
+
+.input_section > form > button > span {
+    font-weight: bold;
+}
+
+.input_section > form > .input > input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.input_section > form > .input > label {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.input_section > form > .input_inline {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.input_section > form > .input_inline > label {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.navbar-judul {
+    font-weight: bolder;
 }
 
 
