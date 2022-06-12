@@ -166,9 +166,9 @@ main {
 }
 
 .full-width {
-    min-width: 100% !important;
+    min-width: 100%;
 }
 
-#inputListName {
-    width: 100% !important;
+.input-dropdown {
+    bor
 }
