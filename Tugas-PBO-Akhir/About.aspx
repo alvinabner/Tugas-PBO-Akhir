@@ -16,9 +16,9 @@
                 </div>
                 <div class="input input-dropdown mt-4">
                         <asp:Label for="inputComplete" runat="server" Text="Action" /><br />
-                        <div class="dropdown">
-                            <select>
-                                <option>Complete</option>
+                        <div class="select-wrapper">
+                            <select class="select-box">
+                                <option>Finished</option>
                                 <option>Undone</option>
                             </select>
                         </div>

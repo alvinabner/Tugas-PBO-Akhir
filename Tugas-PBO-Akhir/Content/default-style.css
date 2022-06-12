@@ -169,6 +169,18 @@ main {
     min-width: 100%;
 }
 
-.input-dropdown {
-    bor
+.select-wrapper {
+    border-radius: 5px;
+    display: inline-block;
+    overflow: hidden;
+    background: #cccccc;
+    border: 1px solid #cccccc;
+    min-width: 100%;
 }
+
+.select-box {
+    min-width: 100%;
+    height: 40px;
+    border: 0px;
+    outline: none;
+}   
