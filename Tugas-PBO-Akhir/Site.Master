@@ -14,8 +14,8 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="Content/Site.css" />
-    <link rel="stylesheet" type="text/css" href="Content/default-style.css" />
+    <link rel="stylesheet" href="Content/Site.css" />
+    <link rel="stylesheet" href="Content/default-style.css" />
 
 </head>
 <body>

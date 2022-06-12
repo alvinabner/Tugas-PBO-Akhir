@@ -164,3 +164,11 @@ main {
 .class-author, .class-year {
     color: rgb(180, 180, 180);
 }
+
+.full-width {
+    min-width: 100% !important;
+}
+
+#inputListName {
+    width: 100% !important;
+}
