@@ -20,7 +20,8 @@
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td><%= i+1 %> Januari 2022</td>
-                <td><a class="btn btn-primary mr-2">Edit</a><a class="btn btn-danger mr-2">Delete</a></td>
+                <td><a class="btn btn-primary mr-2" href="Edit.aspx">Edit</a>
+                    <a class="btn btn-danger mr-2">Delete</a></td>
             </tr>
 
             <%} %>
