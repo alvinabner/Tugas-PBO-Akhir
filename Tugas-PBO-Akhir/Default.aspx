@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Tugas_PBO_Akhir._Default" %>
 
+
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <% 
+        int num = 3;
+
+    %>
     <br />
     <br />
     <table class="table table-striped table-dark mt-5">
@@ -14,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            <% for (int i = 0; i < 5; i++)
+            <% for (int i = 0; i < num; i++)
                 {  %>
             <tr>
                 <th scope="row">1</th>
@@ -27,5 +34,7 @@
             <%} %>
         </tbody>
     </table>
+    <asp:Label ID="warning" runat="server" ForeColor="Red"></asp:Label>
+
 
 </asp:Content>

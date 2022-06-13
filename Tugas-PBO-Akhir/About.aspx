@@ -6,28 +6,31 @@
             <h2>Input Data</h2>
             <div id="inputList" class="text-white">
                 <div class="input mt-2">
-                    <asp:Label for="inputListName" runat="server" Text="Nama" />
-                    <asp:TextBox ID="inputListName" class="form-control full-width" runat="server" />
+                    <asp:Label for="todo" runat="server" Text="Todo" />
+                    <asp:TextBox ID="todo" class="form-control full-width" runat="server" />
                 </div>
                 <div class="input mt-2">
-                    <asp:Label for="inputBookAuthor" runat="server" Text="Deadline" >
-                    <asp:TextBox ID="inputBookAuthor" class="form-control full-width" textmode="DateTimeLocal" runat="server"/>
+                    <asp:Label for="deadline" runat="server" Text="Deadline">
+                        <asp:TextBox ID="deadline" class="form-control full-width" TextMode="DateTimeLocal" runat="server" />
                     </asp:Label>
                 </div>
                 <div class="input input-dropdown mt-2">
-                        <asp:Label for="inputComplete" runat="server" Text="Action" /><br />
-                        <div class="select-wrapper">
-                            <select class="select-box">
-                                <option>Finished</option>
-                                <option>Undone</option>
-                            </select>
-                        </div>
-                </div>
+                    <asp:Label for="status" runat="server" Text="Action" /><br />
+                        <asp:DropDownList class="custom-select w-100" ID="status" runat="server">
+                            <asp:ListItem Value="False" Selected="True">  
+                                Undone  
+                            </asp:ListItem>
+                            <asp:ListItem Value="True" Selected="False">  
+                                Completed  
+                            </asp:ListItem>
+                        </asp:DropDownList>
+                    <asp:Label ID="lblmsg" runat="server" ForeColor="Red"></asp:Label>
+                    </div>
                 <div class="text-center button mt-2">
-                    <a class="btn btn-danger m-2" Text="Cancel" runat="server" href="~/">Cancel</a>
-                    <asp:Button class="btn btn-success m-2" Text="Done" runat="server" />
+                    <a class="btn btn-danger m-2" text="Cancel" runat="server" href="~/">Cancel</a>
+                    <asp:Button class="btn btn-success m-2" Text="Done" runat="server" OnClick="btnInsertion_Click" />
                 </div>
-           
+
             </div>
         </section>
     </main>
