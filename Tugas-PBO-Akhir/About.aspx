@@ -28,7 +28,7 @@
                     </div>
                 <div class="text-center button mt-2">
                     <a class="btn btn-danger m-2" text="Cancel" runat="server" href="~/">Cancel</a>
-                    <asp:Button class="btn btn-success m-2" Text="Done" runat="server" OnClick="btnInsertion_Click" />
+                    <asp:Button class="btn btn-success m-2" Text="Done" runat="server" OnClick="insertData" />
                 </div>
 
             </div>
