@@ -51,7 +51,7 @@
                         <a class="nav-link" runat="server" href="~/">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" runat="server" href="~/About">Input</a>
+                        <a class="nav-link" runat="server" href="~/About">Add Todo </a>
                     </li>
                 </ul>
             </div>

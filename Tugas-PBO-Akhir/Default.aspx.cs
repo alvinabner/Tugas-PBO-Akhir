@@ -15,10 +15,12 @@ namespace Tugas_PBO_Akhir
         protected void Page_Load(object sender, EventArgs e)
         {
             List<Todo> todoList = getAllTodo(null, null);
+            int index = 1;
             foreach (Todo todo in todoList)
             {
                 var status = (todo.isDone) ? "Finished" : "Unfinished";
-                body.InnerHtml += $"<tr><td>{todo.id}</td><td>{todo.task}</td><td>{todo.deadline}</td><td>{status}</td><td><a class=\"btn btn-primary mr-2 \" href=\"Edit.aspx/?id={todo.id}\">Edit</a><a class=\"btn btn-danger mr-2 \" href=\"Delete.aspx/?id={todo.id}\">Delete</a></td></tr>";
+                body.InnerHtml += $"<tr><td>{index}</td><td>{todo.task}</td><td>{todo.deadline.ToString("dd-MMM-yyyy  HH:mm")}</td><td>{status}</td><td><a class=\"btn btn-primary mr-2 \" href=\"Edit.aspx/?id={todo.id}\">Edit</a><a class=\"btn btn-danger mr-2 \" href=\"Delete.aspx/?id={todo.id}\">Delete</a></td></tr>";
+                index++;
             }
         }
 
@@ -55,7 +57,7 @@ namespace Tugas_PBO_Akhir
                     cmd.Dispose();
                     connection.Close();
 
-                    warning.Text = dt.Rows[0]["deadline"].ToString();
+                    //warning.Text = dt.Rows[0]["deadline"].ToString();
                 }
             }
             catch (Exception ex)

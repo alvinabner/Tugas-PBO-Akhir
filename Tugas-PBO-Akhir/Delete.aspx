@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="warning" runat="server" ForeColor="Red"></asp:Label>
         </div>
     </form>
 </body>

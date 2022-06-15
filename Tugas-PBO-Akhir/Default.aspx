@@ -20,6 +20,6 @@
             
         </tbody>
     </table>
-    <asp:Label ID="warning" runat="server" ForeColor="Red"></asp:Label>
+    <%--<asp:Label ID="warning" runat="server" ForeColor="Red"></asp:Label>--%>
 
 </asp:Content>
