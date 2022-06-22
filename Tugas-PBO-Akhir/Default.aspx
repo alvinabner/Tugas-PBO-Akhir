@@ -7,13 +7,14 @@
 
     <br />
     <br />
-    <table  class="table table-striped table-dark mt-5">
+    <table  class="table table-striped table-dark table-bordered mt-5">
         <thead>
-            <tr>
+            <tr class="text-center">
                 <th scope="col">#</th>
                 <th scope="col">Task</th>
                 <th scope="col">Deadline</th>
                 <th scope="col">Status</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody ID="body"  runat="server">

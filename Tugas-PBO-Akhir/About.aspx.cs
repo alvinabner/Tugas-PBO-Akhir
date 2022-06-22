@@ -37,7 +37,8 @@ namespace Tugas_PBO_Akhir
                     Response.Redirect("Default.aspx");
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex) 
+            {
                 Console.WriteLine(ex.Message);
                 lblmsg.Text = ex.Message;
 
