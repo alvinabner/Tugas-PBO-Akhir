@@ -11,7 +11,7 @@ namespace Tugas_PBO_Akhir
 {
 
 
-    public partial class About
+    public partial class Create
     {
 
         /// <summary>

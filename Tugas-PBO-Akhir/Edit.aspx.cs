@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Tugas_PBO_Akhir.Controller;
 
 namespace Tugas_PBO_Akhir
 {
@@ -15,110 +16,55 @@ namespace Tugas_PBO_Akhir
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.QueryString["id"];
-            getDataByID(id);
-            //Response.Redirect("~/");
-        }
-
-        protected void getDataByID(string id)
-        {
-
-            try /* Select After Validations*/
+            if (!Page.IsPostBack)
             {
-                using (NpgsqlConnection connection = new NpgsqlConnection())
-                {
-                    connection.ConnectionString = ConfigurationManager.ConnectionStrings["stringku"].ToString();
-                    connection.Open();
-                    NpgsqlCommand cmd = new NpgsqlCommand();
-                    cmd.Connection = connection;
-                    cmd.CommandText = $"Select * from todo where id={id} ";
-                    cmd.CommandType = CommandType.Text;
-                    NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-
-                    String task = dt.Rows[0]["task"].ToString();
-                    bool isDone = bool.Parse(dt.Rows[0]["isdone"].ToString());
-                    DateTime deadline = DateTime.Parse(dt.Rows[0]["deadline"].ToString());
-
-                    taskLabel.Text += " ("+task+")";
-                    statusLabel.Text += " (" + ((isDone) ? "Finished" : "Unfinished") + ")";
-                    dlLabel.Text  += " ("+deadline.ToString("MM/dd/yyyy hh:mm") +")";
-
-                    cmd.Dispose();
-                    connection.Close();
-
-                }
-            }
-            catch (Exception ex)
-            {
+                string id = Request.QueryString["id"];
+                Todo todo = TodoDB.getDataByID(id);
+                taskInput.Text = todo.task;
+                statusInput.SelectedValue = todo.isDone.ToString();
+                dlData.Text = todo.deadline.ToString();
+                dlLabel.Text += " (" + todo.deadline.ToString("MM/dd/yyyy HH:mm") +")";
 
             }
 
+
         }
+
+
+
+
         protected void updateData(object sender, EventArgs e)
         {
+            Dictionary<string, dynamic> data = new Dictionary<string, dynamic>();
             string id = Request.QueryString["id"];
-            try /* Updation After Validations*/
+
+            string dl;
+
+            if (dlInput.Text == "")
             {
-                using (NpgsqlConnection connection = new NpgsqlConnection())
-                {
-                    connection.ConnectionString = ConfigurationManager.ConnectionStrings["stringku"].ToString();
-                    connection.Open();
-                    NpgsqlCommand cmd = new NpgsqlCommand();
-                    cmd.Connection = connection;
-                    cmd.CommandType = CommandType.Text;
-
-                    cmd.CommandText = $"Select * from todo where id={id} ";
-                    NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    string task = dt.Rows[0]["task"].ToString();
-                    bool isDone = bool.Parse(dt.Rows[0]["isdone"].ToString());
-                    DateTime deadline = DateTime.Parse(dt.Rows[0]["deadline"].ToString());
-
-                    string taskData, statusData, dlData;
-
-                    if(taskInput.Text == "")
-                    {
-                        taskData = task;
-                    }
-                    else
-                    {
-                        taskData = taskInput.Text;
-                    }
-                    if (statusInput.SelectedValue == isDone.ToString())
-                    {
-                        statusData = isDone.ToString();
-                    }
-                    else
-                    {
-                        statusData = statusInput.SelectedValue;
-                    }
-                    if (dlInput.Text == "")
-                    {
-                        dlData = deadline.ToString();
-                    }
-                    else
-                    {
-                        dlData = dlInput.Text;
-                    }
-                    cmd.CommandText = $"update todo set task='{taskData}', isdone={statusData},deadline='{dlData}' where id={id}";
-                    cmd.ExecuteNonQuery();
-                    cmd.Dispose();
-                    connection.Close();
-                    //warning.Text = statusInput.SelectedValue + " ======= " + dlInput.Text + " =========== " + taskInput.Text;
-
-                    Response.Redirect("~/");
-                }
+                dl = dlData.Text;
             }
-            catch (Exception ex) {
-                    warning.Text = "gagal";
+            else
+            {
+                dl = dlInput.Text;
+            }
 
+            data.Add("task", taskInput.Text);
+            data.Add("isdone", statusInput.SelectedValue);
+            data.Add("deadline", dl);
+
+            var res = TodoDB.updateData(id, data);
+
+            if (res == "berhasil")
+            {
+                Response.Redirect("~/");
 
             }
+            else
+            {
+                warning.Text = "gagal";
+            }
+
         }
 
     }

@@ -10,6 +10,7 @@
                     <asp:TextBox ID="taskInput" class="form-control full-width" runat="server" />
                 </div>
                 <div class="input mt-2">
+                    <asp:Label class="d-none" for="dlInput" ID="dlData" runat="server" Text="" />
                     <asp:Label for="dlInput" ID="dlLabel" runat="server" Text="Deadline" />
                     <asp:TextBox ID="dlInput" class="form-control full-width" textmode="DateTimeLocal" runat="server"/>
                 </div>
