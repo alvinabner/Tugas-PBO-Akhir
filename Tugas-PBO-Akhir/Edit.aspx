@@ -15,7 +15,7 @@
                     <asp:TextBox ID="dlInput" class="form-control full-width" textmode="DateTimeLocal" runat="server"/>
                 </div>
                 <div class="input input-dropdown mt-2">
-                        <asp:Label for="statusInput" ID="statusLabel" runat="server" Text="Action" /><br />
+                        <asp:Label for="statusInput" ID="statusLabel" runat="server" Text="Status" /><br />
                         <asp:DropDownList class="custom-select"  ID="statusInput" runat="server">
                             <asp:ListItem Value="False" Selected="False">  
                                 Unfinished  

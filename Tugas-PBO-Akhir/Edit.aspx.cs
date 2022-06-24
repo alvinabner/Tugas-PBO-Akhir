@@ -24,14 +24,8 @@ namespace Tugas_PBO_Akhir
                 statusInput.SelectedValue = todo.isDone.ToString();
                 dlData.Text = todo.deadline.ToString();
                 dlLabel.Text += " (" + todo.deadline.ToString("MM/dd/yyyy HH:mm") +")";
-
             }
-
-
         }
-
-
-
 
         protected void updateData(object sender, EventArgs e)
         {

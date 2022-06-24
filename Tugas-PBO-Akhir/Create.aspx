@@ -6,7 +6,7 @@
             <h2>Input Data</h2>
             <div id="inputList" class="text-white">
                 <div class="input mt-2">
-                    <asp:Label for="todo" runat="server" Text="Todo" />
+                    <asp:Label for="todo" runat="server" Text="Task" />
                     <asp:TextBox ID="todo" class="form-control full-width" runat="server" />
                 </div>
                 <div class="input mt-2">
@@ -15,13 +15,13 @@
                     </asp:Label>
                 </div>
                 <div class="input input-dropdown mt-2">
-                    <asp:Label for="status" runat="server" Text="Action" /><br />
+                    <asp:Label for="status" runat="server" Text="Status" /><br />
                         <asp:DropDownList class="custom-select w-100" ID="status" runat="server">
                             <asp:ListItem Value="False" Selected="True">  
-                                Undone  
+                                Unfinished  
                             </asp:ListItem>
                             <asp:ListItem Value="True" Selected="False">  
-                                Completed  
+                                Finished  
                             </asp:ListItem>
                         </asp:DropDownList>
                     <asp:Label ID="lblmsg" runat="server" ForeColor="Red"></asp:Label>

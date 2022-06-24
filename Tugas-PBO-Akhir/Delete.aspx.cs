@@ -20,7 +20,8 @@ namespace Tugas_PBO_Akhir
 
             if (res == "berhasil")
             {
-            Response.Redirect("~/");
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Data Berhasil Dihapus" + "');", true);
+                Response.Redirect("~/");
             }
             else
             {

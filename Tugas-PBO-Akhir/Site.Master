@@ -67,8 +67,8 @@
             </asp:ContentPlaceHolder>
         </div>
 
-        <footer class="bg-dark">
-            <h6>&copy; 2022, Brainchild Kelompok PBO</h6>
+        <footer class="">
+            <h6>&copy; 2022, Brainchild Kelompok PBO G-4</h6>
         </footer>
 
         <%-- -----------------STYLE---------------- --%>
@@ -93,7 +93,7 @@
             footer {
                 color: white;
                 text-align: center;
-                margin: 50px 0px;
+                margin: 80px 0px 0px 0px;
                 overflow: auto;
             }
 
