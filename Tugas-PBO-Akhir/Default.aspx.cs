@@ -20,7 +20,14 @@ namespace Tugas_PBO_Akhir
             foreach (Todo todo in todoList)
             {
                 var status = (todo.isDone) ? "Finished" : "Unfinished";
-                body.InnerHtml += $"<tr><td class=\"text-center\" >{index}</td><td class=\"text-center\">{todo.task}</td><td class=\"text-center\">{todo.deadline.ToString("dd-MMM-yyyy  HH:mm")}</td><td class=\"text-center\">{status}</td><td class=\"text-center\"><a class=\"btn btn-primary mr-2 \" href=\"Edit.aspx?id={todo.id}\">Edit</a><a class=\"btn btn-danger mr-2 \" href=\"Delete.aspx/?id={todo.id}\">Delete</a></td></tr>";
+                body.InnerHtml += 
+                    $"<tr><td class=\"text\" >{index}</td>" +
+                    $"<td class=\"text\">{todo.task}</td>" +
+                    $"<td class=\"text\">{todo.deadline.ToString("dd-MMM-yyyy  HH:mm")}</td>" +
+                    $"<td class=\"text\">{status}</td>" +
+                    $"<td class=\"text-center\">" +
+                    $"<a class=\"btn btn-primary mr-2 \" href=\"Edit.aspx?id={todo.id}\">Edit</a>" +
+                    $"<a class=\"btn btn-danger mr-2 \" href=\"Delete.aspx/?id={todo.id}\">Delete</a></td></tr>";
                 index++;
             }
         }

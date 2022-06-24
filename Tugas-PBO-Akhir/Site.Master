@@ -56,12 +56,51 @@
                 </ul>
             </div>
         </nav>
+
+        <div class="judul-main">
+            <h2 class="text-center text-white">To-do List</h2>
+        </div>
+        <hr />
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            
         </div>
 
+        <footer class="bg-dark">
+            <h6>&copy; 2022, Brainchild Kelompok PBO</h6>
+        </footer>
+
+        <%-- -----------------STYLE---------------- --%>
+        <style>
+            .judul-main {
+                margin-top: 90px;
+            }
+
+            .judul-main > h2 {
+                font-weight: 800;
+            }
+
+            hr {
+                border: 1px solid white;
+                margin: 0px 25%;
+            }
+
+            .body-content {
+                margin-top: -50px;
+            }
+
+            footer {
+                color: white;
+                text-align: center;
+                margin: 50px 0px;
+                overflow: auto;
+            }
+
+            footer > h6 {
+                padding: 20px;
+            }
+        </style>
     </form>
 </body>
 </html>
